@@ -1,8 +1,10 @@
+require "colorize"
+
 class Piece
-  attr_reader :type, :current_pos
+  attr_reader :type, :current_pos, :board
   # current_pos nil value temporary
   def initialize(type = " ", current_pos = nil)
-    @type = type.force_encoding('utf-8')
+    @type = type
     @current_pos = current_pos
   end
 
@@ -11,7 +13,7 @@ class Piece
   end
 
   def to_s
-    string = "  #{type}   "
+    string = "  #{type}  ".black
     string
   end
 
@@ -19,8 +21,7 @@ class Piece
     self.valid_moves.include?(pos)
   end
 
-# param: void
-# returns: Array
+
   def valid_moves
 
   end

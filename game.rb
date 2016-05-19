@@ -13,12 +13,11 @@ class Game
   end
 
   def run
-    puts "Mark all the spaces on the board!"
     puts "WASD or arrow keys to move the cursor, enter or space to confirm."
 
     until @board[[7,7]].type == "P"
       start_pos, end_pos = @player.move
-      @board.move(start_pos, end_pos) unless @board[end_pos].type == "X"
+      @board.move(start_pos, end_pos)
     end
     @display.render
     puts "Hooray, the board is filled!"
