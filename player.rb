@@ -6,3 +6,4 @@ class Player
     @display = display
   end
 end
+
